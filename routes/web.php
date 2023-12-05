@@ -17,7 +17,14 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/form', [BarangController::class, 'tampil']);
+Route::get('/', [BarangController::class, 'index'])->name('index');
 
-Route::get('/', [BarangController::class, 'index']);
+Route::get('/form', [BarangController::class, 'create'])->name('form');
 Route::post('/proses-barang', [BarangController::class, 'store']);
+
+Route::get('/show/{id}', [BarangController::class, 'show'])->name('show');
+
+Route::get('/edit/{id}', [BarangController::class, 'edit'])->name('edit');
+Route::put('/update/{id}', [BarangController::class, 'update'])->name('update');
+
+Route::get('/delete/{id}', [BarangController::class, 'destroy'])->name('delete');

@@ -24,7 +24,7 @@
   <link rel="shortcut icon" href="{{ asset('/template/images/favicon.png') }}" />
 </head>
 <body>
-    @yield('form_input')
+    @yield('body')
 
 <!-- plugins:js -->
 <script src="{{ asset('/template/vendors/js/vendor.bundle.base.js') }}"></script>
