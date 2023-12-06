@@ -1,6 +1,7 @@
 @extends('utama')
 @section ('body')
 
+
 <div class="col-lg-12 stretch-card">
   <div class="card">
     <div class="card-body">
@@ -38,36 +39,34 @@
               </th>
             </tr>
           </thead>
-          @foreach ($barangs as $barang)
           <tbody>
             <tr class="table-warning">
               <td>
-                {{ $barang->kode_barang }}
+                {{ $barangs->kode_barang }}
               </td>
               <td>
-                {{ $barang->nama_barang }}
+                {{ $barangs->nama_barang }}
               </td>
               <td>
-                {{ $barang->jenis_varian }}
+                {{ $barangs->jenis_varian }}
               </td>
               <td>
-                {{ $barang->qty }}
+                {{ $barangs->qty }}
               </td>
               <td>
-                {{ $barang->harga_jual }}
+                {{ $barangs->harga_jual }}
               </td> 
               <td>
-                {{ $barang->total_harga }}
+                {{ $barangs->total_harga }}
               </td> 
               <td>
-                {{ $barang->potongan_harga }}
+                {{ $barangs->potongan_harga }}
               </td> 
               <td>
-                {{ $barang->harga_bayar }}
+                {{ $barangs->harga_bayar }}
               </td> 
             </tr>
           </tbody>
-          @endforeach
         </table>
       </div>
       <br>

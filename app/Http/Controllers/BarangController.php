@@ -12,7 +12,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $barangs = Barang::all();
+        $barangs = Barang::orderBy('kode_barang', 'asc')->get();
+        
         return view('index', compact('barangs'));
     }
 
@@ -67,14 +68,8 @@ class BarangController extends Controller
     ]);
 
     // Menampilkan hasil
-    $barangs = Barang::all();
+    $barangs = Barang::orderBy('kode_barang', 'asc')->get();
     return view('index', compact('barangs'));
-    }
-
-    public function semuaBarang()
-    {
-        $barangs = Barang::all();
-        return view('semua-barang', compact('barangs'));
     }
 
     /**
@@ -82,7 +77,8 @@ class BarangController extends Controller
      */
     public function show(string $id)
     {
-        $barangs = Barang::all();
+        $barangs = Barang::findOrFail($id);
+
         return view('show', compact('barangs'));
     }
 
@@ -140,7 +136,7 @@ class BarangController extends Controller
 
         $barangs->save();
 
-        $barangs = Barang::all();
+        $barangs = Barang::orderBy('kode_barang', 'asc')->get();
         return view('index', compact('barangs'));
     }
 
@@ -153,7 +149,7 @@ class BarangController extends Controller
 
         $barangs->delete();
 
-        $barangs = Barang::all();
+        $barangs = Barang::orderBy('kode_barang', 'asc')->get();
         return view('index', compact('barangs'));
     }
 }

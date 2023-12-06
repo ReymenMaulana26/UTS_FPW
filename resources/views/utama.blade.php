@@ -24,6 +24,7 @@
   <link rel="shortcut icon" href="{{ asset('/template/images/favicon.png') }}" />
 </head>
 <body>
+    
     @yield('body')
 
 <!-- plugins:js -->
